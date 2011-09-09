@@ -1,12 +1,12 @@
 <?php
 /*
  * Plugin Name: User Name Availability Checker for wordpress/buddypress
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Brajesh Singh
  * Author URI: http://buddydev.com
  * Plugin URI: http://buddydev.com/buddypress/creating-a-buddypress-wordpress-username-availability-checker-for-your-site
  * Description: Check the availability of Username on registration page
- * Last Modified: 21st september 2010
+ * Last Modified: September09, 2011
  * License : GPL 
  */
 
@@ -38,7 +38,7 @@ wp_enqueue_style("ua-css",UAC_PLUGIN_URL."/style.css");
 
 //return success/error and info
 function bpdev_ua_check_username(){
-    include_once(ABSPATH.WPINC."/registration.php");//we need o include this other wise username_exists will not favor us :)
+   
     if(!empty($_POST["user_name"])){
         $user_name=sanitize_user($_POST["user_name"]);
         if(username_exists($user_name))
@@ -75,7 +75,7 @@ add_action("wp_ajax_check_username","bpdev_ua_check_username");//hook to ajax ac
 function bpdev_validate_username( $user_name) {
 	global $wpdb;
 
-	$errors = new WP_Error();
+	$error=false;
 	$maybe = array();
 	preg_match( "/[a-z0-9]+/", $user_name, $maybe );
 
