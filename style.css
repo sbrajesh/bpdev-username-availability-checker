@@ -1,4 +1,4 @@
-/*Put this into your theeme and comment the css enqueue line in the plugin for better optimization*//*code*/	
+/*Put this into your theme and comment the css enqueue line in the plugin for better optimization*//*code*/	
 /* The css is taken from bp-default theme, thanks to @apeatling, I have just modified the selectors*/
 #username_checker span.loading {
 	background-image: url( ajax-loader.gif );

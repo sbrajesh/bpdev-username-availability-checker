@@ -32,7 +32,7 @@ add_action("wp_print_scripts", "bpdev_ua_enqueue_script");
 add_action("wp_print_styles", "bpdev_ua_enqueue_style");
 function bpdev_ua_enqueue_style(){
 if(bp_is_page(BP_REGISTER_SLUG))
-wp_enqueue_style("ua-css",UAC_PLUGIN_URL."/style.css");
+wp_enqueue_style("ua-css",UAC_PLUGIN_URL."style.css");
 }
 //ajax for checking the availability
 
