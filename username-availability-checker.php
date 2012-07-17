@@ -1,12 +1,12 @@
 <?php
 /*
  * Plugin Name: User Name Availability Checker for wordpress/buddypress
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Brajesh Singh
  * Author URI: http://buddydev.com
  * Plugin URI: http://buddydev.com/buddypress/creating-a-buddypress-wordpress-username-availability-checker-for-your-site
  * Description: Check the availability of Username on registration page
- * Last Modified: September09, 2011
+ * Last Modified: July 17, 2012
  * License : GPL 
  */
 
@@ -64,9 +64,11 @@ else
  $msg=array("code"=>"error","message"=>__("Username Can not be empty!","buddypress"));
      
 echo json_encode($msg);	
+exit(0);
 }
 
 add_action("wp_ajax_check_username","bpdev_ua_check_username");//hook to ajax action
+add_action("wp_ajax_nopriv_check_username","bpdev_ua_check_username");//hook to ajax action
 
 /* helper function to check the username is valid or not, thanks to @apeatling, taken from bp-core/bp-core-signup.php and modified for chacking only the username
  * original:bp_core_validate_user_signup()
