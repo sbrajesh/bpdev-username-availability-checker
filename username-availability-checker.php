@@ -19,10 +19,9 @@ define("UAC_PLUGIN_URL",WP_PLUGIN_URL."/".UAC_DIR_NAME);
 
  
 function bpdev_ua_enqueue_script(){
-if(bp_is_page(BP_REGISTER_SLUG)){
-	wp_enqueue_script("jquery");
-	wp_enqueue_script("json2");
-	wp_enqueue_script("uachecker",UAC_PLUGIN_URL."script.js");
+   
+if( bp_is_register_page()){
+	wp_enqueue_script('uachecker',UAC_PLUGIN_URL."script.js",array('jquery','json2'));
 
 }
 
