@@ -30,7 +30,7 @@ add_action("wp_print_scripts", "bpdev_ua_enqueue_script");
 /*include the css file, I suggest including in your theme rather than this plugin, why load an extra css file ? */
 add_action("wp_print_styles", "bpdev_ua_enqueue_style");
 function bpdev_ua_enqueue_style(){
-if(bp_is_page(BP_REGISTER_SLUG))
+if( bp_is_register_page())
 wp_enqueue_style("ua-css",UAC_PLUGIN_URL."style.css");
 }
 //ajax for checking the availability
