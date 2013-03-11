@@ -1,12 +1,12 @@
 <?php
 /*
  * Plugin Name: User Name Availability Checker for wordpress/buddypress
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Brajesh Singh
  * Author URI: http://buddydev.com
  * Plugin URI: http://buddydev.com/buddypress/creating-a-buddypress-wordpress-username-availability-checker-for-your-site
  * Description: Check the availability of Username on registration page
- * Last Modified: July 17, 2012
+ * Last Modified: March 11, 2013
  * License : GPL 
  */
 
