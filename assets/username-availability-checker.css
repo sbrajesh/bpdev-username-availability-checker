@@ -1,0 +1,33 @@
+
+/* The css is taken from bp-default theme, thanks to @apeatling, I have just modified the selectors*/
+.username_checker span.loading {
+	background-image: url( ajax-loader.gif );
+	background-position: 92% 50%;
+	background-repeat: no-repeat;
+	padding-right: 30px !important;
+}	
+.username_checker  span.available,
+.username_checker span.error{
+	display:none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin: 0 0 10px 0;
+	width: 90%;
+	padding: 6px;
+	
+	border-color: #c4e9bd;
+}
+.username_checker span.available{
+	display: block;
+	color: #1a9b00;
+	background: #dffcd9;
+}
+
+.username_checker span.error{
+	display:block;
+	color: #fff;
+	background: #e41717;
+
+}
+			
