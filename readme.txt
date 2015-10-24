@@ -3,7 +3,7 @@ Contributors: buddydev, sbrajesh
 Tags: buddypress, buddypress registration, username, registration, new user
 Requires at least: 3.6
 Tested up to: 4.3.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,5 +45,7 @@ See [BuddyDev Username Availability Checker plugin page](http://buddydev.com/plu
 
 == Changelog ==
 
+= 1.1.1 =
+ * Allow using filter to add extra username selectors
 = 1.1.0 =
  * Initial release on wp.org repo

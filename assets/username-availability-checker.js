@@ -7,7 +7,7 @@ jQuery( document ).ready( function() {
 	//create_wrapper( 'input#signup_username' );
 	//create_wrapper( 'input#signup_username' );
 	
-    jq( document).on( 'blur', 'input#signup_username, input#user_login', function() {
+    jq( document).on( 'blur', _BDUAChecker.selectors, function() {
 		var $wrapper = jq( this ).parent('.username_checker');
 		
 		if( ! $wrapper.get(0) ) {

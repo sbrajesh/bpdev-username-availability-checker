@@ -1,12 +1,12 @@
 <?php
 /*
  * Plugin Name: BuddyDev Username Availability Checker
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Brajesh Singh
  * Author URI: http://buddydev.com
  * Plugin URI: http://buddydev.com/buddydev-username-availability-checker/
  * Description: Check the availability of Username on WordPress/BuddyPress registration/add new user screens
- * Last Modified: October 22, 2015
+ * Last Modified: October 24, 2015
  * License : GPL 
  */
 
@@ -123,7 +123,14 @@ class BuddyDev_Username_Availability_Checker {
 	public function load_js() {
 		
 		if( $this->should_load_asset() ) {
+			
 			wp_enqueue_script( 'username-availability-checker-js', $this->url . "assets/username-availability-checker.js", array( 'jquery' ) );
+			
+			$data = array( 
+				'selectors' => apply_filters( 'buddydev_uachecker_selectors', 'input#signup_username, form#createuser input#user_login, #registerform input#user_login' ) 
+			);
+			
+			wp_localize_script( 'username-availability-checker-js', '_BDUAChecker', $data );
 		}
 	}
 	
@@ -158,7 +165,7 @@ class BuddyDev_Username_Availability_Checker {
 		} elseif( $pagenow == 'wp-login.php' && isset( $_GET['action'] ) && $_GET['action'] =='register' ) {
 			$load = true;
 		}
-		
+		//sorry I should have renamed it buddydev_uachecker__load_assets but now I can not, my hads are tied
 		return apply_filters( 'buddydev_username_availability_checker_load_assets', $load  );
 		
 	}
@@ -205,7 +212,10 @@ class BuddyDev_Username_Availability_Checker {
 			$error= __( 'Sorry, usernames must have letters too!', 'bpdev-username-availability-checker' ) ;
 		}
 		
-		return $error;
+		//Let others dictate us
+		//the devine message to show the users in case of failure
+		//success is empty, never forget that.
+		return apply_filters( 'buddydev_uachecker_username_error', $error, $user_name );
 
 	}
 
