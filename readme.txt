@@ -1,17 +1,17 @@
-=== BuddyDev Username Availability Checker ===
+=== WordPress Username Availability Checker ===
 Contributors: buddydev, sbrajesh
 Tags: buddypress, buddypress registration, username, registration, new user
 Requires at least: 3.6
-Tested up to: 4.3.1
-Stable tag: 1.1.1
+Tested up to: 4.9
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-BuddyDev Username availability checker checks if a username is available or not.
+WordPress Username availability checker checks if a username is available or not.
 
 == Description ==
-BuddyDev Username availability checker for WordPress & BuddyPress checks for the username availability on new user registration screens.
-It assist users & site admins by notifying them using ajax whether the username they enterd is available or not.
+WordPress Username availability checker for WordPress & BuddyPress checks for the username availability on new user registration screens.
+It assist users & site admins by notifying them using ajax whether the username they entered is available or not.
 
 = Features =
 
@@ -41,11 +41,15 @@ Please use BuddyDev forums for any support question. We are helpful people and s
 
 == Screenshots ==
 
-See [BuddyDev Username Availability Checker plugin page](http://buddydev.com/plugins/bpdev-username-availability-checker/ "Plugin page" ) for screenshots.
+See [Username Availability Checker plugin page](http://buddydev.com/plugins/bpdev-username-availability-checker/ "Plugin page" ) for screenshots.
 
 == Changelog ==
 
-= 1.1.1 =
+= 1.1.2 =
+ * Add compatibility with WordPress Ajax Login Plugin
+ * Rename plugin to WordPress User Name availability Checker.
+
+ = 1.1.1 =
  * Allow using filter to add extra username selectors
 = 1.1.0 =
  * Initial release on wp.org repo
