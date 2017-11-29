@@ -1,14 +1,17 @@
 <?php
-/*
+/**
  * Plugin Name: BuddyDev Username Availability Checker
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Brajesh Singh
- * Author URI: http://buddydev.com
- * Plugin URI: http://buddydev.com/buddydev-username-availability-checker/
+ * Author URI: https://buddydev.com
+ * Plugin URI: https://buddydev.com/buddydev-username-availability-checker/
  * Description: Check the availability of Username on WordPress/BuddyPress registration/add new user screens
- * Last Modified: October 24, 2015
- * License : GPL 
+ * License : GPL
  */
+// No direct access over web.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 0 );
+}
 
 class BuddyDev_Username_Availability_Checker {
 
