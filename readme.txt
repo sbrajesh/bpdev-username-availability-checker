@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: buddypress, buddypress registration, username, registration, new user
 Requires at least: 3.6
-Tested up to: 4.9
-Stable tag: 1.1.2
+Tested up to: 5.2.1
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,8 @@ Please use BuddyDev forums for any support question. We are helpful people and s
 See [Username Availability Checker plugin page](http://buddydev.com/plugins/bpdev-username-availability-checker/ "Plugin page" ) for screenshots.
 
 == Changelog ==
+= 1.1.3 =
+ * Tested with WordPress 5.2.1/BuddyPress 4.3
 
 = 1.1.2 =
  * Add compatibility with WordPress Ajax Login Plugin
