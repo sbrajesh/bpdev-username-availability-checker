@@ -1,9 +1,9 @@
 === WordPress Username Availability Checker ===
 Contributors: buddydev, sbrajesh
 Tags: buddypress, buddypress registration, username, registration, new user
-Requires at least: 3.6
-Tested up to: 5.2.1
-Stable tag: 1.1.3
+Requires at least: 4.0
+Tested up to: 5.2.2
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,9 @@ Please use BuddyDev forums for any support question. We are helpful people and s
 See [Username Availability Checker plugin page](http://buddydev.com/plugins/bpdev-username-availability-checker/ "Plugin page" ) for screenshots.
 
 == Changelog ==
+= 1.1.4 =
+ * Improve error messages show to the user on invalid username.
+
 = 1.1.3 =
  * Tested with WordPress 5.2.1/BuddyPress 4.3
 
