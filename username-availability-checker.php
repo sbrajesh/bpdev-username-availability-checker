@@ -225,45 +225,44 @@ class BuddyDev_Username_Availability_Checker {
 	 * @return string nothing if validated else error string
 	 * */
 	private function validate_username( $user_name ) {
+		$errors = new WP_Error();
 
-		$error = false;
-		$maybe = array();
+		if ( empty( $user_name ) ) {
+			// must not be empty.
+			$errors->add( 'user_name', __( 'Please enter a valid username.', 'bpdev-username-availability-checker' ) );
+		}
 
-		preg_match( "/[a-z0-9]+/", $user_name, $maybe );
+		// check blacklist.
+		$illegal_names = get_site_option( 'illegal_names' );
+		if ( in_array( $user_name, (array) $illegal_names ) ) {
+			$errors->add( 'user_name', __( 'That username is not allowed.', 'bpdev-username-availability-checker' ) );
+		}
 
-		//$db_illegal_names = get_site_option( 'illegal_names' );
-
-		//$filtered_illegal_names = apply_filters( 'bp_core_illegal_usernames', array( 'www', 'web', 'root', 'admin', 'main', 'invite', 'administrator', BP_GROUPS_SLUG, BP_MEMBERS_SLUG, BP_FORUMS_SLUG, BP_BLOGS_SLUG, BP_REGISTER_SLUG, BP_ACTIVATION_SLUG ) );
-
-		$illegal_names = function_exists( 'bp_core_get_illegal_names' ) ? bp_core_get_illegal_names() : array(); //array_merge( (array)$db_illegal_names, (array)$filtered_illegal_names );
-		//update_site_option( 'illegal_names', $illegal_names );
-
-		if ( ! validate_username( $user_name ) || in_array( $user_name, ( array ) $illegal_names ) || ( isset( $maybe[0] ) && $user_name != $maybe[0] ) ) {
-			$error = __( 'Only lowercase letters and numbers allowed', 'bpdev-username-availability-checker' );
+		// see if passed validity check.
+		if ( ! validate_username( $user_name ) ) {
+			$errors->add( 'user_name', __( 'Usernames can contain only letters, numbers, ., -, and @', 'bpdev-username-availability-checker' ) );
 		}
 
 		if ( strlen( $user_name ) < 4 ) {
-			$error = __( 'Username must be at least 4 characters', 'buddypress' );
+			$errors->add( 'user_name', __( 'Username must be at least 4 characters', 'bpdev-username-availability-checker' ) );
 		}
 
 		if ( strpos( ' ' . $user_name, '_' ) != false ) {
-			$error = __( 'Sorry, usernames may not contain the character "_"!', 'bpdev-username-availability-checker' );
+			$errors->add( 'user_name', __( 'Sorry, usernames may not contain the character "_"!', 'bpdev-username-availability-checker' ) );
 		}
 
 		/* Is the user_name all numeric? */
 		$match = array();
-
 		preg_match( '/[0-9]*/', $user_name, $match );
 
 		if ( $match[0] == $user_name ) {
-			$error = __( 'Sorry, usernames must have letters too!', 'bpdev-username-availability-checker' );
+			$errors->add( 'user_name', __( 'Sorry, usernames must have letters too!', 'bpdev-username-availability-checker' ) );
 		}
 
 		// Let others dictate us
 		// the divine message to show the users in case of failure
 		// success is empty, never forget that.
-		return apply_filters( 'buddydev_uachecker_username_error', $error, $user_name );
-
+		return apply_filters( 'buddydev_uachecker_username_error', $errors->has_errors() ? $errors->get_error_message() : '', $user_name );
 	}
 
 
