@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WordPress Username Availability Checker
- * Version: 1.1.4
+ * Version: 1.1.5
  * Author: BuddyDev
  * Author URI: https://buddydev.com
  * Plugin URI: https://buddydev.com/buddydev-username-availability-checker/
@@ -203,7 +203,7 @@ class BuddyDev_Username_Availability_Checker {
 
 		if ( function_exists( 'bp_is_register_page' ) && bp_is_register_page() ) {
 			$load = true;
-		} elseif ( is_admin() && get_current_screen()->id == 'user' && get_current_screen()->action == 'add' ) {
+		} elseif ( is_admin() && function_exists( 'get_current_screen' ) && get_current_screen()->id == 'user' && get_current_screen()->action == 'add' ) {
 			$load = true;
 		} elseif ( $pagenow == 'wp-login.php' && isset( $_GET['action'] ) && $_GET['action'] == 'register' ) {
 			$load = true;
