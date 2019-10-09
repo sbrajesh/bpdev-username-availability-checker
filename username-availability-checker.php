@@ -227,6 +227,8 @@ class BuddyDev_Username_Availability_Checker {
 	private function validate_username( $user_name ) {
 		$errors = new WP_Error();
 
+		$user_name = sanitize_user( $user_name, true );
+
 		if ( empty( $user_name ) ) {
 			// must not be empty.
 			$errors->add( 'user_name', __( 'Please enter a valid username.', 'bpdev-username-availability-checker' ) );
@@ -245,6 +247,8 @@ class BuddyDev_Username_Availability_Checker {
 
 		if ( strlen( $user_name ) < 4 ) {
 			$errors->add( 'user_name', __( 'Username must be at least 4 characters', 'bpdev-username-availability-checker' ) );
+		} elseif ( mb_strlen( $user_name ) > 60 ) {
+			$errors->add( 'user_login_too_long', __( 'Username may not be longer than 60 characters.', 'bpdev-username-availability-checker' ) );
 		}
 
 		if ( strpos( ' ' . $user_name, '_' ) != false ) {
@@ -259,13 +263,22 @@ class BuddyDev_Username_Availability_Checker {
 			$errors->add( 'user_name', __( 'Sorry, usernames must have letters too!', 'bpdev-username-availability-checker' ) );
 		}
 
+		/**
+		 * Filters the list of blacklisted usernames.
+		 *
+		 * @param array $usernames Array of blacklisted usernames.
+		 */
+		$illegal_logins = (array) apply_filters( 'illegal_user_logins', array() );
+
+		if ( in_array( strtolower( $user_name ), array_map( 'strtolower', $illegal_logins ) ) ) {
+			$errors->add( 'invalid_username', __( 'Sorry, that username is not allowed.', 'bpdev-username-availability-checker' ) );
+		}
+
 		// Let others dictate us
 		// the divine message to show the users in case of failure
 		// success is empty, never forget that.
 		return apply_filters( 'buddydev_uachecker_username_error', $errors->has_errors() ? $errors->get_error_message() : '', $user_name );
 	}
-
-
 }
 
 // instantiate.
