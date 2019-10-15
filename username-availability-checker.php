@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WordPress Username Availability Checker
- * Version: 1.1.6
+ * Version: 1.1.7
  * Author: BuddyDev
  * Author URI: https://buddydev.com
  * Plugin URI: https://buddydev.com/buddydev-username-availability-checker/
@@ -232,6 +232,11 @@ class BuddyDev_Username_Availability_Checker {
 		if ( empty( $user_name ) ) {
 			// must not be empty.
 			$errors->add( 'user_name', __( 'Please enter a valid username.', 'bpdev-username-availability-checker' ) );
+		}
+
+		if ( function_exists( 'buddypress' ) ) {
+			$user_name = preg_replace( '/\s+/', '', $user_name );
+
 		}
 
 		// check blacklist.

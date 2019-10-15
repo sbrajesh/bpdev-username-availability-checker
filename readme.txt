@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: buddypress, buddypress registration, username, registration, new user
 Requires at least: 4.0
-Tested up to: 5.2.3
-Stable tag: 1.1.6
+Tested up to: 5.2.4
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,9 @@ Please use BuddyDev forums for any support question. We are helpful people and s
 See [Username Availability Checker plugin page](http://buddydev.com/plugins/bpdev-username-availability-checker/ "Plugin page" ) for screenshots.
 
 == Changelog ==
+= 1.1.6 =
+ * If BuddyPress is active, remove space between the words before checking for availability.
+
 = 1.1.6 =
  * Sanitize username before checking. Helps solve the space and dashes issue.
 
