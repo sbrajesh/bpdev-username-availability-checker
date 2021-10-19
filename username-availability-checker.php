@@ -170,7 +170,7 @@ class BuddyDev_Username_Availability_Checker {
 			wp_enqueue_script( 'username-availability-checker-js', $this->url . 'assets/username-availability-checker.js', array( 'jquery' ), $this->version );
 
 			$data = array(
-				'selectors' => apply_filters( 'buddydev_uachecker_selectors', 'input#signup_username, form#createuser input#user_login, #registerform input#user_login, .lwa-register input#user_login' ),
+				'selectors' => apply_filters( 'buddydev_uachecker_selectors', 'input#signup_username, form#createuser input#user_login, #registerform input#user_login, .lwa-register input#user_login, .woocommerce-form #reg_username, .woocommerce-checkout #account_username' ),
 			);
 
 			wp_localize_script( 'username-availability-checker-js', '_BDUAChecker', $data );
@@ -212,9 +212,11 @@ class BuddyDev_Username_Availability_Checker {
 			$load = true;
 		} elseif ( is_admin() && function_exists( 'get_current_screen' ) && get_current_screen()->id == 'user' && get_current_screen()->action == 'add' ) {
 			$load = true;
-		} elseif ( $pagenow == 'wp-login.php' && isset( $_GET['action'] ) && $_GET['action'] == 'register' ) {
+		} elseif ( $pagenow === 'wp-login.php' && isset( $_GET['action'] ) && $_GET['action'] == 'register' ) {
 			$load = true;
 		} elseif ( class_exists( 'LoginWithAjax' ) && ! is_user_logged_in() ) {
+			$load = true;
+		} elseif ( function_exists( 'is_account_page' ) && is_account_page() || function_exists( 'is_checkout' ) && is_checkout() ) {
 			$load = true;
 		}
 
