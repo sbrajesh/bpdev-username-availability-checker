@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: buddypress, buddypress registration, username, registration, new user
 Requires at least: 4.0
-Tested up to: 5.2.4
-Stable tag: 1.1.7
+Tested up to: 5.8.1
+Stable tag: 1.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,7 +44,10 @@ Please use BuddyDev forums for any support question. We are helpful people and s
 See [Username Availability Checker plugin page](http://buddydev.com/plugins/bpdev-username-availability-checker/ "Plugin page" ) for screenshots.
 
 == Changelog ==
-= 1.1.6 =
+= 1.1.8 =
+ * Added support for WooCommerce account and checkout page username availability support(if username is enabled for Woocommerce account creation).
+
+= 1.1.7 =
  * If BuddyPress is active, remove space between the words before checking for availability.
 
 = 1.1.6 =

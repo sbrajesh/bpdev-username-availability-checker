@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WordPress Username Availability Checker
- * Version: 1.1.7
+ * Version: 1.1.8
  * Author: BuddyDev
  * Author URI: https://buddydev.com
  * Plugin URI: https://buddydev.com/buddydev-username-availability-checker/
