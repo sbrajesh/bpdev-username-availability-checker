@@ -36,6 +36,13 @@ class BuddyDev_Username_Availability_Checker {
 	private $url;
 
 	/**
+	 * Plugin version.
+	 *
+	 * @var string
+	 */
+	private $version = '1.1.8';
+
+	/**
 	 * Constructor.
 	 */
 	private function __construct() {
@@ -160,7 +167,7 @@ class BuddyDev_Username_Availability_Checker {
 	public function load_js() {
 
 		if ( $this->should_load_asset() ) {
-			wp_enqueue_script( 'username-availability-checker-js', $this->url . 'assets/username-availability-checker.js', array( 'jquery' ) );
+			wp_enqueue_script( 'username-availability-checker-js', $this->url . 'assets/username-availability-checker.js', array( 'jquery' ), $this->version );
 
 			$data = array(
 				'selectors' => apply_filters( 'buddydev_uachecker_selectors', 'input#signup_username, form#createuser input#user_login, #registerform input#user_login, .lwa-register input#user_login' ),
@@ -176,7 +183,7 @@ class BuddyDev_Username_Availability_Checker {
 	public function load_css() {
 
 		if ( $this->should_load_asset() ) {
-			wp_enqueue_style( 'username-availability-checker-css', $this->url . 'assets/username-availability-checker.css' );
+			wp_enqueue_style( 'username-availability-checker-css', $this->url . 'assets/username-availability-checker.css', array(), $this->version );
 		}
 	}
 
