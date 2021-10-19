@@ -1,65 +1,65 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BuddyDev Username Availability Checker\n"
-"POT-Creation-Date: 2019-10-16 02:29+0530\n"
-"PO-Revision-Date: 2019-10-16 02:29+0530\n"
+"POT-Creation-Date: 2021-10-20 04:31+0530\n"
+"PO-Revision-Date: 2021-10-20 04:32+0530\n"
 "Last-Translator: BuddyDev.com\n"
 "Language-Team: BuddyDev\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-KeywordsList: __;_x;_ex;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: username-availability-checker.php:107
+#: username-availability-checker.php:114
 msgid "Username Can not be empty!"
 msgstr ""
 
-#: username-availability-checker.php:118
+#: username-availability-checker.php:125
 msgid "This usename is taken, please choose another one."
 msgstr ""
 
-#: username-availability-checker.php:130
+#: username-availability-checker.php:137
 msgid ""
 "This username is registered but not activated. It may be available within "
 "few days if not activated. Please check back again for the availability."
 msgstr ""
 
-#: username-availability-checker.php:142
+#: username-availability-checker.php:149
 msgid "Congrats! The username is available."
 msgstr ""
 
-#: username-availability-checker.php:234
+#: username-availability-checker.php:243
 msgid "Please enter a valid username."
 msgstr ""
 
-#: username-availability-checker.php:245
+#: username-availability-checker.php:254
 msgid "That username is not allowed."
 msgstr ""
 
-#: username-availability-checker.php:250
+#: username-availability-checker.php:259
 msgid "Usernames can contain only letters, numbers, ., -, and @"
 msgstr ""
 
-#: username-availability-checker.php:254
+#: username-availability-checker.php:263
 msgid "Username must be at least 4 characters"
 msgstr ""
 
-#: username-availability-checker.php:256
+#: username-availability-checker.php:265
 msgid "Username may not be longer than 60 characters."
 msgstr ""
 
-#: username-availability-checker.php:260
+#: username-availability-checker.php:269
 msgid "Sorry, usernames may not contain the character \"_\"!"
 msgstr ""
 
-#: username-availability-checker.php:268
+#: username-availability-checker.php:277
 msgid "Sorry, usernames must have letters too!"
 msgstr ""
 
-#: username-availability-checker.php:279
+#: username-availability-checker.php:288
 msgid "Sorry, that username is not allowed."
 msgstr ""
